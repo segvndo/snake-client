@@ -7,9 +7,15 @@ const connect = function () {
     host: "localhost",
     port: 50541
   });
+  conn.on("connect", () => {
+    conn.write("Name: BM");
+  });
   
-  conn.setEncoding("utf8");
-  return conn;
+  conn.setEncoding("utf8"); // interpret data as text
+  conn.on("data", (data) => {
+    console.log("Message from client: ", data);
+  });
+    return conn;
 };
 
 console.log("Connecting ...");
