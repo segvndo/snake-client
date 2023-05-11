@@ -18,15 +18,7 @@ const connect = function () {
     console.log('I have connected!!!');
     conn.write("Name: BM");
   });
-
-  // conn.on("connect", () => {
-  //   setTimeout(() => {
-  //     conn.write("Move: up",);
-  //   }, 2000);
-  // });
     return conn;
 };
-
-// connect();
 
 module.exports = {connect};
